@@ -22,7 +22,7 @@ phases:
   pre_build:
     commands:
       - echo "Login to AWS ECR and get commit id"
-      - aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.ca-central-1/reponame
+      - aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.ca-central-1
       - COMMIT_ID=$(git rev-parse --short HEAD)
 
   build:
